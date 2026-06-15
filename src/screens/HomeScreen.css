@@ -1,0 +1,39 @@
+.home-screen {
+  min-height: 100vh;
+  padding: var(--nb-sp-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--nb-bg);
+  position: relative;
+  overflow: hidden;
+}
+.home-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--nb-sp-4);
+  text-align: center;
+  z-index: 1;
+}
+.home-logo {
+  font-weight: 900;
+  font-size: clamp(56px, 14vw, 120px);
+  letter-spacing: 1px;
+  margin: 0;
+  line-height: 1;
+  text-shadow: 5px 5px 0 var(--nb-pink), 10px 10px 0 var(--nb-ink);
+}
+.home-sub {
+  font-weight: 700;
+  font-size: var(--nb-fs-lg);
+  margin: 0;
+}
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nb-sp-4);
+  margin-top: var(--nb-sp-5);
+  width: 100%;
+  max-width: 360px;
+}
