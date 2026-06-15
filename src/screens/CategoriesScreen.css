@@ -1,0 +1,104 @@
+.cats-screen {
+  min-height: 100vh;
+  background: var(--nb-bg);
+  padding: var(--nb-sp-5);
+}
+.cats-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nb-sp-5);
+}
+.cats-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--nb-sp-4);
+  flex-wrap: wrap;
+}
+.cats-counter { font-size: var(--nb-fs-lg); }
+.cats-counter-num { font-size: var(--nb-fs-xl); color: var(--nb-pink); }
+
+.cats-sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nb-sp-5);
+}
+.cats-section-label {
+  display: inline-block;
+  padding: 4px var(--nb-sp-3);
+  border: var(--nb-border-sm);
+  border-radius: var(--nb-radius-sm);
+  background: var(--nb-violet);
+  color: #fff;
+  font-weight: 900;
+  font-size: var(--nb-fs-sm);
+  box-shadow: var(--nb-shadow-sm);
+  margin-bottom: var(--nb-sp-3);
+}
+
+.cats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--nb-sp-4);
+}
+.cats-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nb-sp-2);
+  padding: var(--nb-sp-4);
+  min-height: 130px;
+  border: var(--nb-border);
+  border-radius: var(--nb-radius);
+  background: var(--cat-color, var(--nb-surface));
+  color: var(--nb-ink);
+  font-family: inherit;
+  cursor: pointer;
+  position: relative;
+  box-shadow: var(--nb-shadow);
+  transition: transform var(--nb-t-med) var(--nb-spring), box-shadow var(--nb-t-med);
+}
+.cats-card:hover:not(:disabled) {
+  transform: translate(-2px, -2px) rotate(-1deg);
+  box-shadow: var(--nb-shadow-lg);
+}
+.cats-card:active:not(:disabled) {
+  transform: translate(6px, 6px);
+  box-shadow: 0 0 0 var(--nb-ink);
+}
+.cats-card.is-selected {
+  outline: 4px solid var(--nb-pink);
+  outline-offset: 3px;
+  transform: translate(-2px, -2px) rotate(-1deg);
+  box-shadow: var(--nb-shadow-lg);
+}
+.cats-card.is-disabled { opacity: 0.35; cursor: not-allowed; }
+.cats-card-icon { font-size: 38px; line-height: 1; }
+.cats-card-name { font-weight: 900; font-size: var(--nb-fs-sm); text-align: center; }
+.cats-card-check {
+  position: absolute;
+  top: -10px;
+  inset-inline-end: -10px;
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--nb-success);
+  color: var(--nb-ink);
+  border: var(--nb-border-sm);
+  border-radius: 50%;
+  font-weight: 900;
+  box-shadow: var(--nb-shadow-sm);
+}
+
+.cats-actions {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--nb-sp-4);
+  position: sticky;
+  bottom: var(--nb-sp-4);
+}
+@media (max-width: 560px) {
+  .cats-actions { grid-template-columns: 1fr; }
+}

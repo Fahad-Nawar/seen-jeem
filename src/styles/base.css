@@ -1,0 +1,70 @@
+/* Yadee — base styles: reset, font-face, RTL, body background, focus. */
+
+@font-face {
+  font-family: 'Thmanyah';
+  src: url('../../fonts/thmanyahsans-Regular.woff2') format('woff2');
+  font-weight: 400 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Thmanyah';
+  src: url('../../fonts/thmanyahsans-Medium.woff2') format('woff2');
+  font-weight: 600 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Thmanyah';
+  src: url('../../fonts/thmanyahsans-Bold.woff2') format('woff2');
+  font-weight: 800 900;
+  font-display: swap;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+html {
+  direction: rtl;
+  font-family: var(--nb-font);
+  font-size: var(--nb-fs-md);
+  color: var(--nb-ink);
+  background: var(--nb-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--nb-bg);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button { font-family: inherit; }
+input, textarea, select { font-family: inherit; }
+
+img { max-width: 100%; display: block; }
+
+/* Focus — visible, neo-brutalist style */
+:focus-visible {
+  outline: 4px dashed var(--nb-cyan);
+  outline-offset: 4px;
+}
+
+/* App wrapper */
+.app {
+  min-height: 100vh;
+  background: var(--nb-bg);
+}
+
+/* Reduced motion — global override */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
